@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+
+<!DOCTYPE editors SYSTEM "dtds/editors.dtd">
+
+<!-- NaviOX -->
+
+<editors>
+	
+	<editor url="textEditor.jsp">
+		<for-model-property model="User" property="name" />		
+		<for-model-property model="SignIn" property="user" />				
+		<for-model-property model="Role" property="name" />
+		<for-model-property model="Module" property="name" />		
+		<for-model-property model="Module" property="application" />						
+	</editor>
+	
+	<editor url="../../naviox/editors/actionsEditor.jsp" frame="true">			
+		<formatter class="com.openxava.naviox.formatters.ArrayAsStringFormatter" />	
+		<list-formatter class="com.openxava.naviox.formatters.ActionsListFormatter" />
+		<for-model-property model="ModuleRights" property="excludedActions" />
+	</editor>
+
+	<editor url="../../naviox/editors/organizationUrlEditor.jsp">
+		<for-model-property model="Organization" property="url" />
+	</editor>	
+	
+</editors>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Addons">
+        <wb-resource deploy-path="/" source-path="/xava"/>
+        <wb-resource deploy-path="/" source-path="/src/main"/>
+        <wb-resource deploy-path="/" source-path="/src/test"/>
+        <wb-resource deploy-path="/" source-path="/properties-templates"/>
+    </wb-module>
+</project-modules>

@@ -1,0 +1,17 @@
+/*
+Put here your own style
+*/
+
+body {
+  padding-top: 35px;
+}
+
+* {
+    box-sizing: content-box;
+}
+
+select {
+    box-sizing: border-box;
+}
+
+

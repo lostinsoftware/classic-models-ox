@@ -1,0 +1,94 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+
+<!DOCTYPE controllers SYSTEM "dtds/controllers.dtd">
+
+<!-- NaviOX -->
+
+<controllers>
+
+	<controller name="SignIn">
+	
+		<action name="init" on-init="true" hidden="true"  			
+			class="com.openxava.naviox.actions.InitSignInAction"/>
+	
+		<action name="signIn"  			
+			class="com.openxava.naviox.actions.SignInAction"/>
+			
+	</controller>		
+
+	<controller name="User">
+		<extends controller="Typical"/>
+	</controller>
+	
+	<controller name="Module">
+		<extends controller="Typical"/>
+	</controller>
+	
+	<controller name="Role">
+		<extends controller="Typical"/>
+		<action name="addModulesRights" image="create_new.gif" hidden="true"
+			class="com.openxava.naviox.actions.GoAddModulesRightsToRoleAction"/>										
+	</controller>
+	
+	<controller name="AddToModulesRights">
+		<extends controller="AddToCollection"/>
+		<action name="add" 
+			class="com.openxava.naviox.actions.AddModulesRightsToRoleAction"/>		
+	</controller>
+	
+	
+	<controller name="Folder">
+		<extends controller="Typical"/>
+		
+		<action name="saveSubfolder" hidden="true" 
+			class="com.openxava.naviox.actions.SaveSubfolderAction"/>
+		<action name="moduleUp" hidden="true" 
+			class="com.openxava.naviox.actions.CallFolderMethodAction"
+			image="descending.gif">
+			<set property="method" value="moduleUp"/>
+		</action>
+		<action name="moduleDown" hidden="true" 
+			class="com.openxava.naviox.actions.CallFolderMethodAction"
+			image="ascending.gif">
+			<set property="method" value="moduleDown"/>
+		</action>
+		<action name="subfolderUp" hidden="true" 
+			class="com.openxava.naviox.actions.CallFolderMethodAction"
+			image="descending.gif">
+			<set property="method" value="subfolderUp"/>
+		</action>
+		<action name="subfolderDown" hidden="true" 
+			class="com.openxava.naviox.actions.CallFolderMethodAction"
+			image="ascending.gif">
+			<set property="method" value="subfolderDown"/>
+		</action>
+	</controller>
+	
+	<controller name="ChangePassword">
+		<action name="changePassword" 
+			class="com.openxava.naviox.actions.ChangePasswordAction"/>			
+	</controller>
+	
+	<controller name="NewOnlyInList">
+		<action  name="new" mode="list"
+			class="org.openxava.actions.NewAction"
+			image="new.gif"
+			keystroke="Control N">
+			<set property="restoreModel" value="true"/>			
+		</action>
+	</controller>
+	
+	<controller name="Organization">
+		<extends controller="Navigation"/>
+		<extends controller="NewOnlyInList"/>
+		<extends controller="Print"/>
+		
+		<action name="createNewOrganization" mode="detail" takes-long="true"
+			class="com.openxava.naviox.actions.CreateNewOrganizationAction"/>
+			
+		<action name="delete" mode="detail" confirm="true"
+			class="com.openxava.naviox.actions.DeleteOrganizationAction"/>		
+						
+	</controller>
+		
+</controllers>

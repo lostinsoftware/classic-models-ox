@@ -1,0 +1,33 @@
+<?xml version = "1.0" encoding = "ISO-8859-1"?>
+
+<!DOCTYPE controllers SYSTEM "dtds/controllers.dtd">
+
+<controllers>
+    
+    <!-- Environment variable:
+    <env-var name="ClassicModelsOX_DEFAULT_YEAR" value="2015"/> 
+    -->
+    
+    <!-- Session object:
+    <object name="ClassicModelsOX_activeYear" class="java.lang.Integer" value="2015" 
+    	    scope="global"/>    
+    -->
+    
+    <!-- Controller:
+    <controller name="Teacher">
+    	<extends controller="Typical"/>
+    	<action name="new" image="new.gif" keystroke="Control N"
+        	class="actions.CreateTeacher">
+    	</action>
+	</controller>    
+    -->
+    <controller name="Productlines">
+      <extends controller="Typical"/>
+      <action name="hideProductImage"
+          on-init="true"
+          hidden="true"
+          class="com.lostinsoftware.classicmodels.actions.HideProductImageAction">
+      </action>
+  </controller>    
+    
+</controllers>
